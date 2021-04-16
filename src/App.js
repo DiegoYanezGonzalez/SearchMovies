@@ -4,6 +4,7 @@ import 'bulma/css/bulma.css';
 import {Title} from  './components/Title';
 import {SearchForm} from './components/SearchForm';
 import { MovieList } from './components/MovieList';
+import { Detail } from './pages/Detail';
 
 class App extends Component {
   state = {usedSearch:false , results:[] }
