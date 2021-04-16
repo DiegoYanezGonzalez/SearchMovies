@@ -21,6 +21,16 @@ _renderResults () {
 }
 
   render() {
+    //direccion actual de la pagna
+    const url = new URL(document.location)
+    //nos indica si la url tiene el query para meter la id
+    const hasId = url.searchParams.has('id')
+
+    if (hasId){
+      return <Detail id={url.searchParams.get('id')} />
+    }
+
+
     return (
       <div className="App">
         <Title>Search Movie</Title>
