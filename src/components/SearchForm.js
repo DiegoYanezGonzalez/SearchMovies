@@ -18,11 +18,12 @@ _handleChange=(e) =>{
 _handleSubmit=(e) =>{
   e.preventDefault()
   const {inputMovie} = this.state
+  
   fetch(` http://www.omdbapi.com/?apikey=${API_KEY}&s=${inputMovie}` )
     .then(res =>res.json())
     .then(results  => {
       console.log(results)
-     const{Search,totalResults} = results
+     const{Search =[],totalResults =0} = results
      console.log({Search,totalResults})
      this.props.onResults(Search)
     })
